@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { getApiResource } from '../../utils/network'
 import { API_PEOPLE } from '../../constants/api'
+import { getPeopleId, getPeopleImage } from '../../services/getPeopleData'
+import PeopleList from '../../components/PeopleList/PeopleList'
 
 const PeoplePage = () => {
    const [people, setPeople] = useState(null)
@@ -9,9 +11,12 @@ const PeoplePage = () => {
       const getResource = async () => {
          const res = await getApiResource(API_PEOPLE)
          const peopleList = res.results.map(({ name, url }) => {
+            const id = getPeopleId(url)
+            const img = getPeopleImage(id)
             return {
+               id,
                name,
-               url
+               img
             }
          })
          setPeople(peopleList)
@@ -21,13 +26,7 @@ const PeoplePage = () => {
 
    return (
       <>
-         {people && (
-            <ul>
-               {people.map(({ name, url }) => (
-                  <li key={name}>{name}</li>
-               ))}
-            </ul>
-         )}
+         {people && <PeopleList people={people} />}
       </>
    )
 }
