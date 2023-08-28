@@ -1,3 +1,4 @@
+import styles from './PeoplePage.module.css'
 import { useEffect, useState } from 'react'
 import { getApiResource } from '../../utils/network'
 import { API_PEOPLE } from '../../constants/api'
