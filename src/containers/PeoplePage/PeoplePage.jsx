@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { withErrorApi } from '../../hoc-helper/withErrorApi'
-import { getApiResource } from '../../utils/network'
-import { API_PEOPLE } from '../../constants/api'
-import { getPeopleId, getPeopleImage } from '../../services/getPeopleData'
-import PeopleList from '../../components/PeopleList/PeopleList'
+import { withErrorApi } from '@hoc-helper/withErrorApi'
+import { getApiResource } from '@utils/network'
+import { API_PEOPLE } from '@constants/api'
+import { getPeopleId, getPeopleImage } from '@services/getPeopleData'
+import PeopleList from '@components/PeopleList/PeopleList'
 
 const PeoplePage = ({ setErrorApi }) => {
    const [people, setPeople] = useState(null)
