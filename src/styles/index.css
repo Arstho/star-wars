@@ -18,3 +18,10 @@ body {
    font-family: var(--font-family-main);
 }
 
+.header__text {
+   line-height: 1.7;
+   font-size: var(--font-size-header);
+   text-shadow: 0 0 2px var(--color-black);
+   color: var(--thema-default-header);
+   transition: color var(--transition);
+}
