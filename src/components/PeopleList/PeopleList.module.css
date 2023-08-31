@@ -8,7 +8,7 @@
 
 .list__item {
    width: 190px;
-   margin: var(--spacing-media);
+   margin: var(--spacing-medium);
    border-radius: var(--border-radius-small);
    background-color: var(--color-white);
    cursor: pointer;
