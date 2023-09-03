@@ -2,15 +2,17 @@ import PropTypes from 'prop-types'
 import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import { getApiResource } from '@utils/network'
-import { API_PERSON } from '../../constants/api'
+import { getPeopleImage } from '@services/getPeopleData'
+import { API_PERSON } from '@constants/api'
+import { withErrorApi } from '@hoc-helper/withErrorApi'
 
 import styles from './PersonPage.module.css'
-import { withErrorApi } from '../../hoc-helper/withErrorApi'
 
 const PersonPage = ({ setErrorApi }) => {
    const { id } = useParams()
    const [personInfo, setPersonInfo] = useState(null)
    const [personName, setPersonName] = useState(null)
+   const [personPhoto, setPersonPhoto] = useState(null)
 
    useEffect(() => {
       (async () => {
@@ -26,6 +28,7 @@ const PersonPage = ({ setErrorApi }) => {
                { title: 'Gender', data: res.gender },
             ])
             setPersonName(res.name)
+            setPersonPhoto(getPeopleImage(id))
             setErrorApi(false)
          } else {
             setErrorApi(true)
@@ -36,6 +39,7 @@ const PersonPage = ({ setErrorApi }) => {
    return (
       <div>
          <h1>{personName}</h1>
+         <img src={personPhoto} alt={personName} />
          {personInfo && (
             <ul>
                {personInfo.map(({title, data}) => (
