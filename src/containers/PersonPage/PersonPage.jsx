@@ -5,6 +5,8 @@ import { getApiResource } from '@utils/network'
 import { getPeopleImage } from '@services/getPeopleData'
 import { API_PERSON } from '@constants/api'
 import { withErrorApi } from '@hoc-helper/withErrorApi'
+import PersonPhoto from '@components/PersonPage/PersonPhoto'
+import PersonInfo from '@components/PersonPage/PersonInfo'
 
 import styles from './PersonPage.module.css'
 
@@ -37,20 +39,12 @@ const PersonPage = ({ setErrorApi }) => {
    }, [])
 
    return (
-      <div>
+      <div className={styles.wrapper}>
          <h1>{personName}</h1>
-         <img src={personPhoto} alt={personName} />
-         {personInfo && (
-            <ul>
-               {personInfo.map(({title, data}) => (
-                  data && (
-                     <li key={title}>
-                        <span>{title}: {data}</span>
-                     </li>
-                  )
-               ))}
-            </ul>
-         )}
+
+         <PersonPhoto personPhoto={personPhoto} personName={personName} />
+
+         {personInfo && <PersonInfo personInfo={personInfo} />}
       </div>
    )
 }
