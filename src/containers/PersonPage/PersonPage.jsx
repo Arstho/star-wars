@@ -17,13 +17,13 @@ const PersonPage = ({ setErrorApi }) => {
          const res = await getApiResource(`${API_PERSON}/${id}/`)
          if (res) {
             setPersonInfo([
-               { title: 'Heigth', dat: res.heigth },
-               { title: 'Mass', dat: res.mass },
-               { title: 'Hair color', dat: res.hair_color },
-               { title: 'Skin color', dat: res.skin_color },
-               { title: 'Eye color', dat: res.eye_color },
-               { title: 'Birth year', dat: res.birth_year },
-               { title: 'Gender', dat: res.gender },
+               { title: 'Heigth', data: res.heigth },
+               { title: 'Mass', data: res.mass },
+               { title: 'Hair color', data: res.hair_color },
+               { title: 'Skin color', data: res.skin_color },
+               { title: 'Eye color', data: res.eye_color },
+               { title: 'Birth year', data: res.birth_year },
+               { title: 'Gender', data: res.gender },
             ])
             setPersonName(res.name)
             setErrorApi(false)
@@ -35,7 +35,18 @@ const PersonPage = ({ setErrorApi }) => {
 
    return (
       <div>
-         {id}
+         <h1>{personName}</h1>
+         {personInfo && (
+            <ul>
+               {personInfo.map(({title, data}) => (
+                  data && (
+                     <li key={title}>
+                        <span>{title}: {data}</span>
+                     </li>
+                  )
+               ))}
+            </ul>
+         )}
       </div>
    )
 }
