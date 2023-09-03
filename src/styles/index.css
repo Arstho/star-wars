@@ -7,10 +7,12 @@
    --color-dark-grey: #10100e;
    --border-radius-small: 3px;
    --border-radius-medium: 5px;
+   --spacing-ultrasmall: 5px;
    --spacing-small: 10px;
    --spacing-medium: 20px;
    --spacing-large: 30px;
    --font-family-main: sans-serif;
+   --margin-list: 7px;
    --font-size-header: 26px;
    --font-size-subheader: 18px;
    --font-size-main: 16px;
