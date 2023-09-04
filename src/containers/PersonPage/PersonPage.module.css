@@ -1,14 +1,11 @@
 .wrapper {
-
+   margin-top: 45px;
 }
 
 .person__name {
    padding: var(--spacing-small);
-   border-radius: 
-   var(--border-radius-small)
-   var(--border-radius-small)
-   var(--border-radius-small)
-   0;
+   border-radius:
+      var(--border-radius-small) var(--border-radius-small) var(--border-radius-small) 0;
    font-size: var(--font-size-subheader);
    font-weight: var(--font-bold);
    color: var(--color-white);
