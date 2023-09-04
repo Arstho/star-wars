@@ -7,6 +7,7 @@ import { API_PERSON } from '@constants/api'
 import { withErrorApi } from '@hoc-helper/withErrorApi'
 import PersonPhoto from '@components/PersonPage/PersonPhoto'
 import PersonInfo from '@components/PersonPage/PersonInfo'
+import PersonLinkBack from '@components/PersonPage/PersonLinkBack'
 
 import styles from './PersonPage.module.css'
 
@@ -39,14 +40,18 @@ const PersonPage = ({ setErrorApi }) => {
    }, [])
 
    return (
-      <div className={styles.wrapper}>
-         <span className={styles.person__name}>{personName}</span>
-         <div className={styles.container}>
-            <PersonPhoto personPhoto={personPhoto} personName={personName} />
+      <>
+         <PersonLinkBack />
+         <div className={styles.wrapper}>
 
-            {personInfo && <PersonInfo personInfo={personInfo} />}
+            <span className={styles.person__name}>{personName}</span>
+            <div className={styles.container}>
+               <PersonPhoto personPhoto={personPhoto} personName={personName} />
+
+               {personInfo && <PersonInfo personInfo={personInfo} />}
+            </div>
          </div>
-      </div>
+      </>
    )
 }
 
