@@ -1,11 +1,13 @@
 
+import { useNavigate } from 'react-router'
+import iconBack from './img/back.svg'
 import styles from './PersonLinkBack.module.css'
 
 const PersonLinkBack = () => {
-
+   const navigate = useNavigate()
    const handleGoBack = (e) => {
       e.preventDefault()
-      console.log('back');
+      navigate(-1)
    }
    return (
       <a
@@ -13,6 +15,7 @@ const PersonLinkBack = () => {
          onClick={handleGoBack}
          className={styles.link}
       >
+         <img src={iconBack} alt='img' />
          <span>Go back</span>
       </a>
    )
