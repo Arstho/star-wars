@@ -15,7 +15,7 @@ const PersonLinkBack = () => {
          onClick={handleGoBack}
          className={styles.link}
       >
-         <img src={iconBack} alt='img' />
+         <img className={styles.link__img} src={iconBack} alt='img' />
          <span>Go back</span>
       </a>
    )
