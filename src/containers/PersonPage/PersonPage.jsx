@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useParams } from 'react-router'
 import { getApiResource } from '@utils/network'
@@ -8,6 +8,7 @@ import { withErrorApi } from '@hoc-helper/withErrorApi'
 import PersonPhoto from '@components/PersonPage/PersonPhoto'
 import PersonInfo from '@components/PersonPage/PersonInfo'
 import PersonLinkBack from '@components/PersonPage/PersonLinkBack';
+import UILoading from '@components/UI/UILoading'
 
 import styles from './PersonPage.module.css';
 
@@ -55,9 +56,9 @@ const PersonPage = ({ setErrorApi }) => {
 
                {personInfo && <PersonInfo personInfo={personInfo} />}
                {personFilms && (
-                  <Suspense fallback={<h1>loading</h1>}>
+                  <React.Suspense fallback={<UILoading />}>
                      <PersonFilms personFilms={personFilms} />
-                  </Suspense>
+                  </React.Suspense>
                )}
             </div>
          </div>
