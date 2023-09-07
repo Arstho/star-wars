@@ -19,7 +19,7 @@ const PersonInfo = ({ personInfo }) => {
 }
 
 PersonInfo.propTypes = {
-   personInfo: PropTypes.func
+   personInfo: PropTypes.array
 }
 
 export default PersonInfo
