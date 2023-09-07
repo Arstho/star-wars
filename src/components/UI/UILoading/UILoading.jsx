@@ -9,7 +9,6 @@ import cn from 'classnames'
 import styles from './UILoading.module.css'
 
 const UILoading = ({ thema = 'white', isShadow = true, classes }) => {
-   console.log(thema);
    const [loaderIcon, setLoaderIcon] = useState(null)
 
    useEffect(() => {
