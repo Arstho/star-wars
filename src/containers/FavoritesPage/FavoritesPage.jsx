@@ -20,7 +20,6 @@ const FavoritesPage = () => {
       }
    }, [])
 
-   console.log(storeData);
    return (
       <>
          <h1 className='header__text'>FavoritesPage</h1>
