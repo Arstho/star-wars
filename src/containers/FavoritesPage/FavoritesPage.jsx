@@ -5,11 +5,11 @@ const FavoritesPage = () => {
    const storeData = useSelector(state => state.favoriteReduser)
 
    console.log(storeData);
-  return (
-    <h1>
-      FavoritesPage
-    </h1>
-  )
+   return (
+      <h1>
+         FavoritesPage
+      </h1>
+   )
 }
 
 export default FavoritesPage

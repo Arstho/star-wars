@@ -11,6 +11,7 @@ import PersonLinkBack from '@components/PersonPage/PersonLinkBack';
 import UILoading from '@components/UI/UILoading'
 
 import styles from './PersonPage.module.css';
+import { useSelector } from 'react-redux'
 
 const PersonFilms = React.lazy(() => import('@components/PersonPage/PersonFilms'));
 
@@ -22,10 +23,14 @@ const PersonPage = ({ setErrorApi }) => {
    const [personName, setPersonName] = useState(null)
    const [personPhoto, setPersonPhoto] = useState(null)
    const [personFilms, setPersonFilms] = useState(null)
+   const [personFavorite, setPersonFavorite] = useState(false)
+
+   const storeData = useSelector(state => state.favoriteReduser)
 
    useEffect(() => {
       (async () => {
          const res = await getApiResource(`${API_PERSON}/${id}/`)
+         storeData[id] ? setPersonFavorite(true) : setPersonFavorite(false)
          setPersonID(id)
          if (res) {
             setPersonInfo([
@@ -58,6 +63,8 @@ const PersonPage = ({ setErrorApi }) => {
                   personID={personID}
                   personPhoto={personPhoto}
                   personName={personName}
+                  personFavorite={personFavorite}
+                  setPersonFavorite={setPersonFavorite}
                />
                {personInfo && <PersonInfo personInfo={personInfo} />}
                {personFilms && (
