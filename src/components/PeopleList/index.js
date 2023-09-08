@@ -1,1 +1,1 @@
-export { default } from './UIButton'
+export { default } from './PeopleList'
