@@ -6,7 +6,7 @@ const ChooseSide = () => {
    const isTheme = useTheme()
    return (
       <>
-         {isTheme.theme}
+         {/* {isTheme.theme} */}
          <button onClick={() => isTheme.change(THEME_LIGHT)}>Light</button>
          <button onClick={() => isTheme.change(THEME_DARK)}>Dark</button>
          <button onClick={() => isTheme.change(THEME_NEITRAL)}>Neitral</button>
