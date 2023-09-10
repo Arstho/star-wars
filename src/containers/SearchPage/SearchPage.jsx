@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { getApiResource } from '@utils/network';
 import { API_SEARCH } from '@constants/api';
 import { withErrorApi } from '@hoc-helper/withErrorApi';
 import { getPeopleId, getPeopleImage } from '@services/getPeopleData';
+import SearchPageInfo from '@components/SearchPage/SearchPageInfo';
 
 import styles from './SearchPage.module.css';
 
@@ -30,12 +32,16 @@ const SearchPage = ({ setErrorApi }) => {
       }
    }
 
+   useEffect(() => {
+      getResponse('')
+   }, [])
+
    const handleInputChange = (event) => {
       setInputSearchValue(event.target.value)
       getResponse(event.target.value)
    }
    return (
-      <div>
+      <>
          <h1 className='header__text'>SearchPage</h1>
          <input
             type="text"
@@ -43,8 +49,13 @@ const SearchPage = ({ setErrorApi }) => {
             value={inputSearchValue}
             onChange={handleInputChange}
          />
-      </div>
+         <SearchPageInfo people={people} />
+      </>
    )
+}
+
+SearchPage.propTypes = {
+   setErrorApi: PropTypes.func,
 }
 
 export default withErrorApi(SearchPage)

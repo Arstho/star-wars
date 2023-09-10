@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import styles from './Header.module.css'
 import Favorite from '../Favorite'
 import { useTheme, THEME_LIGHT, THEME_DARK, THEME_NEITRAL } from '@context/ThemeProvider'
 import imgDroid from "./img/droid.svg"
 import imgLightsaber from "./img/lightsaber.svg"
 import imgSpaceStation from "./img/space-station.svg"
+import styles from './Header.module.css'
 
 const Header = () => {
    const [icon, setIcon] = useState(imgSpaceStation)
