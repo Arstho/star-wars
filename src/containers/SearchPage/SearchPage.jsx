@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import { debounce } from 'lodash';
+
 import { getApiResource } from '@utils/network';
 import { API_SEARCH } from '@constants/api';
 import { withErrorApi } from '@hoc-helper/withErrorApi';
@@ -36,9 +38,12 @@ const SearchPage = ({ setErrorApi }) => {
       getResponse('')
    }, [])
 
+   const debouncedGetResponse = useCallback(debounce(value => getResponse(value), 300), [])
+
    const handleInputChange = (event) => {
-      setInputSearchValue(event.target.value)
-      getResponse(event.target.value)
+      const value = event.target.value
+      setInputSearchValue(value)
+      debouncedGetResponse(value)
    }
    return (
       <>
