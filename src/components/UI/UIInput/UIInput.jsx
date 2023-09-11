@@ -17,7 +17,7 @@ const UIInput = ({ value, handleInputChange, placeholder, classes }) => (
       <img
          src={icon}
          alt="Clear"
-         onClick={''}
+         onClick={() => value && handleInputChange('')}
          className={cn(styles.clear, !value && styles.clear__disabled)}
       />
    </div>
