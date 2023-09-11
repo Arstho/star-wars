@@ -1,3 +1,4 @@
+import { useState } from "react";
 import UIInput from "./UIInput";
 
 export default {
@@ -5,33 +6,30 @@ export default {
    component: UIInput
 }
 
-const Template = (args) => <UIInput {...args} />
+const Template = (args) => {
+   const [value, setValue] = useState('')
+
+   const handleInputChange = value => {
+      setValue(value)
+   }
+
+   return (
+      <UIInput
+         {...args}
+         value={value}
+         handleInputChange={handleInputChange}
+      />
+   )
+}
 
 const props = {
-   text: 'Hello', 
-   onClick: () => HTMLFormControlsCollection.log('click'), 
-   disabled: false, 
-   thema: 'dark', 
+   value: '',
+   handleInputChange: () => console.log('Input change'),
+   placeholder: 'Placeholder',
    classes: ''
 }
 
-export const Ligth = Template.bind({})
-
-Ligth.args = {
-   ...props,
-   thema: 'ligth',
-}
-
-export const Dark = Template.bind({})
-
-Dark.args = {
-   ...props,
-   thema: 'dark',
-}
-
-export const Disabled = Template.bind({})
-
-Disabled.args = {
-   ...props,
-   disabled: true,
+export const Default = Template.bind({})
+Default.args = {
+   ...props
 }
