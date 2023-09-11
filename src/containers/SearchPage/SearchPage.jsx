@@ -6,6 +6,7 @@ import { getApiResource } from '@utils/network';
 import { API_SEARCH } from '@constants/api';
 import { withErrorApi } from '@hoc-helper/withErrorApi';
 import { getPeopleId, getPeopleImage } from '@services/getPeopleData';
+import UIInput from '@UI/UIInput';
 import SearchPageInfo from '@components/SearchPage/SearchPageInfo';
 
 import styles from './SearchPage.module.css';
@@ -40,19 +41,19 @@ const SearchPage = ({ setErrorApi }) => {
 
    const debouncedGetResponse = useCallback(debounce(value => getResponse(value), 300), [])
 
-   const handleInputChange = (event) => {
-      const value = event.target.value
+   const handleInputChange = (value) => {
+      
       setInputSearchValue(value)
       debouncedGetResponse(value)
    }
    return (
       <>
          <h1 className='header__text'>SearchPage</h1>
-         <input
-            type="text"
+         <UIInput
             placeholder="Input character's name"
             value={inputSearchValue}
-            onChange={handleInputChange}
+            handleInputChange={handleInputChange}
+            classes={styles.input__search}
          />
          <SearchPageInfo people={people} />
       </>
