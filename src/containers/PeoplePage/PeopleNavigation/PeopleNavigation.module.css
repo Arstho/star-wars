@@ -1,8 +1,0 @@
-.conteiner {
-   display: flex;
-   justify-content: center;
-}
-
-.buttons {
-   margin: var(--spacing-small);
-}
