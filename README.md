@@ -1,14 +1,5 @@
 # 🪐 Star Wars Application
 
-## 🐧 Links
-- `Project` https://dev-pandaren.github.io/react-star-wars
-- `Repository` https://github.com/dev-pandaren/react-star-wars
-- `StoryBook` https://dev-pandaren.github.io/react-star-wars/storybook
-- `YouTube Playlist` https://www.youtube.com/playlist?list=PL7cTIfGFrdKkQAWKDu2NdFt5Cx38B-A3i
-- `Let's Code` https://letscode-dev.github.io/
-
----
-
 ## 🐶 Available Scripts and Commands
 
 ```bash
@@ -49,8 +40,6 @@ npm run deploy-storybook # storybook deploy
 <img src="https://github.com/dev-pandaren/react-star-wars/blob/__temp__/_temp/readme/lighthouse.png?raw=true" width="500px" />
 
 ---
-
-## 🐼 Рассмотренные темы
 
 ### React.js
 - Разворачивание приложения с `create-react-app`
@@ -125,21 +114,6 @@ npm run deploy-storybook # storybook deploy
 - Стили
 
 ---
-
-### 🐨 TODO
-
-#### Тестирование и перформанс
-- `ESLint` + `Prettier`
-- Тесты: `Jest`, `Enzyme`
-- Тесты `Cypress`
-- Проверка производительности в `Lighthouse` (Google Chrome)
-
-#### Технологии
-- `TypeScript` https://github.com/letscode-dev/react-star-wars/tree/typescript-part
-- `Firebase` регистрация  
-- `Material UI`, стилизация через css-in-js
-- `Redux Thunk`
-- `React Hook Form` для обработки данных форм
 
 #### Функционал
 - Перегруппировка компонентов Header при адаптиве
