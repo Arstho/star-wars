@@ -1,5 +1,11 @@
 # 🪐 Star Wars Application
 
+## 🐧 Links
+- `Project` https://arstho.github.io/star-wars
+- `Repository` https://github.com/Arstho/star-wars
+
+---
+
 ## 🐶 Available Scripts and Commands
 
 ```bash
